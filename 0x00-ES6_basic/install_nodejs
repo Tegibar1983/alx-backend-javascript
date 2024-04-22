@@ -1,0 +1,13 @@
+#install nodejs 12.11.x (in wsl/docker/anything)
+
+in terminal put this commands:
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+close terminal and open new one:
+
+
+    nvm install 12.11
+    nvm alias default 12.11
+    node -v
+    npm -v
+
