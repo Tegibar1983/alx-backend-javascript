@@ -1,14 +1,3 @@
-function signUpUser(firstName, lastName) {
-  return Promise.resolve({
-    firstName: firstName,
-    lastName: lastName
-  });
+export default function signUpUser(firstName, lastName){
+	return Promise.resolve({firstName, lastName});
 }
-
-signUpUser("John", "Doe")
-  .then(user => {
-    console.log(user);
-  })
-  .catch(error => {
-    console.error(error);
-  });
