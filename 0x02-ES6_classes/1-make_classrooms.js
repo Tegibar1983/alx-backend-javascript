@@ -1,12 +1,9 @@
-/**
- * import ClassRoom class
- */
-import ClassRoom from './0-classroom.js';
+import ClassRoom from './0-classroom';
 
 /**
- * A function that creates array of classrooms with specified sizes
- * It should return object of class arrays
+ * Creates an array of {@link ClassRoom}s with a specific size.
+ * @returns An array of {@link ClassRoom}s.
  */
-export default function initializeRooms(){
-	return [19, 20, 34].map((size) => new ClassRoom(size));
+export default function initializeRooms() {
+  return [19, 20, 34].map((size) => new ClassRoom(size));
 }
