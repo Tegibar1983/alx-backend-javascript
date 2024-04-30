@@ -1,15 +1,9 @@
-/**
- * Changes the quantity of unique grocery items to 100.
- * @param {Map<String, number>} map - A map of the name of a
- * grocery and its quantity.
- */
-export default function updateUniqueItems(map) {
-  if (!(map instanceof Map)) {
-    throw new Error('Cannot process');
-  }
-  map.forEach((value, key) => {
-    if (value === 1) {
-      map.set(key, 100);
-    }
-  });
+export const weakMap = new WeakMap();
+
+// https://stackoverflow.com/questions/29413222/what-are-the-actual-uses-of-es6-weakmap
+export function queryAPI(endpoint) {
+  let called = 0;
+  if (weakMap.get(endpoint)) called = weakMap.get(endpoint);
+  weakMap.set(endpoint, called + 1);
+  if (called + 1 >= 5) throw new Error('Endpoint load is high');
 }
