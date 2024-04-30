@@ -1,11 +1,6 @@
-/**
- * A function that retrives student IDs as array
- */
-
-
-export default function getListStudentIds(students) {
-  if (students instanceof Array) {
-    return students.map((student) => student.id);
+export default function getListStudentIds(list) {
+  if (Array.isArray(list)) {
+    return list.map((obj) => obj.id);
   }
   return [];
 }
